@@ -253,6 +253,9 @@ patchXhr = function(xhr, Class) {
           data.opened = !data.opened && key === 'open';
           data.sent = !data.sent && key === 'send';
           switch (key) {
+            //was missing?
+            case "getResponseHeader":
+                return userResponseHeaders[args[0]];
             case "getAllResponseHeaders":
               return convertHeaders(userResponseHeaders);
             case "send":
